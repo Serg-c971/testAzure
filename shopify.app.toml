@@ -1,0 +1,37 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "9e67328546e5ad448de08a8b5f965639"
+name = "Serg Test UI Pixel"
+handle = "serg-test-ui-extensions-map"
+application_url = "https://mardi-sites-merry-over.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "test-ui-extensions.myshopify.com"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_checkouts,read_discounts,read_locales,read_locations,read_markets,read_products,write_checkouts,write_discounts,write_discounts_allocator_functions,write_locales,write_locations,write_products"
+
+[auth]
+redirect_urls = [
+  "https://mardi-sites-merry-over.trycloudflare.com/auth/callback",
+  "https://mardi-sites-merry-over.trycloudflare.com/auth/shopify/callback",
+  "https://mardi-sites-merry-over.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "https://hack-mm-distinguished-pensions.trycloudflare.com/webhooks"
+
+[app_proxy]
+url = "https://mardi-sites-merry-over.trycloudflare.com"
+subpath = "a"
+prefix = "apps"
+
+[pos]
+embedded = false
